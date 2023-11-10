@@ -139,6 +139,7 @@ void RemoveNode(USERDATA* pPrev)
 int main()
 {
 	//※ int* p; int를 가리키는 변수 p
+	//g_pHeadNode는 헤드노드를 가리키는 포인터임을 인지하기
 
 	/*initDummyData();
 	printList();
@@ -147,8 +148,7 @@ int main()
 	SearchByName("Kim");
 	SearchByName("Choi");
 	ReleaseList();*/
-
-
+	
 	initDummyData();
 	USERDATA* pPrev;
 	if(SearchToRemove(&pPrev, "Choi") != NULL)
