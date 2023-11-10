@@ -3,6 +3,8 @@
 #include <string.h>
 #include <conio.h>
 
+//※ int* p; int를 가리키는 변수 p
+
 typedef struct USERDATA
 {
 	int age;
@@ -93,14 +95,64 @@ USERDATA* SearchByName(const char* pszName) //찾은 노드의 주소 반환
 	return NULL;
 }
 
+USERDATA* SearchToRemove(USERDATA** ppPrev, const char* pszName) //찾은 노드의 앞 노드 반환
+{
+	USERDATA* pCurrent = g_pHeadNode;//g_pHeadNode가 가리키는 놈을 포인팅하고 있음 !!
+	USERDATA* pPrev = NULL; //이 쌍의 의미는 맞다. //g_pHeadNode가 pPrev면 pPrev가 USERDATA를 가리키는게 아니게된다.
+	while (pCurrent != NULL)
+	{
+		if (strcmp(pCurrent->name, pszName) == 0)
+		{
+			*ppPrev = pPrev; //Prev가 g_pHeadNode면 NULL
+			return pCurrent;
+		}
+		pPrev = pCurrent;
+		pCurrent = pCurrent->pNext;
+	}
+	return NULL;
+}
+
+void RemoveNode(USERDATA* pPrev)
+{
+	USERDATA* pRemove = NULL;
+	//g_pHeadNode가 가리키는 첫번째 노드 삭제원하는 상태
+	if (pPrev == NULL) //g_pHeadNode가 pPrev면 pPrev가 USERDATA를 가리키는게 아니게된다.
+	{
+		if (g_pHeadNode == NULL) //아예 노드가 없음 //empty상태
+		{
+			//전혀 할게 없음
+			return;
+		}
+		else
+		{
+			pRemove = g_pHeadNode; //g_pHeadNode가 가리키는 첫 노드 삭제
+			g_pHeadNode = pRemove->pNext; //필요함. g_pHeadNode가 가리키는 첫노드를 삭제하는거지 저 두개만 있는게 아니니까
+			free(pRemove);
+		}
+		return;
+	}
+	pRemove = pPrev->pNext;
+	pPrev->pNext = pRemove->pNext;
+	free(pRemove);
+}
+
 int main()
 {
-	initDummyData();
+	//※ int* p; int를 가리키는 변수 p
+
+	/*initDummyData();
 	printList();
 	SearchByName("Hoon");
 	SearchByName("Lee");
 	SearchByName("Kim");
 	SearchByName("Choi");
+	ReleaseList();*/
+
+
+	initDummyData();
+	USERDATA* pPrev;
+	if(SearchToRemove(&pPrev, "Choi") != NULL)
+		RemoveNode(pPrev);
 	ReleaseList();
 	return 0;
 }
