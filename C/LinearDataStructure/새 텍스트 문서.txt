@@ -1,7 +1,0 @@
-g_pHeadNode쓰는 것으로부터 g_DummyHeadNode로 되면 생각해야 할 if 구조가 줄어든다.
-왜냐면 g_DummyHeadNode 모든 리스트가 노드인데, g_pHeadNode는 포인터 후에 노드들이 나온다.
-
-g_DummyHeadNode보다 g_DummyHeadNode + g_DummyTailNode좋은점?
-삭제하려면 g_DummyHeadNode만 있으면 굳이 앞에 노드 찾아서 가는 로직이 필요한데
-g_DummyHeadNode + g_DummyTailNode는 삭제할 노드만 찾으면된다
---> 더블 링크드 리스트 쓰자.
