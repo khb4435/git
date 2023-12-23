@@ -30,3 +30,24 @@ print(result)
 
 #break
 #반복문 즉시 탈출
+
+#예제1 점수가 80점만 넘으면 합격
+scores = [90,85,77,65,97]
+for i in range(5):
+    if scores[i] >= 80:
+        print(i + 1, " 번 학생은 합격입니다.")
+
+#예제2 특정 번호의 학생은 제외
+scores = [90,85,77,65,97]
+cheating_student_list = {2,4}
+for i in range(5):
+    if i+1 in cheating_student_list:
+        continue
+    if scores[i] >= 80:
+        print(i + 1, " 번 학생은 합격입니다.")
+
+#예제3 구구단
+for i in range(2,10):
+    for j in range(1,10):
+        print(i, "X", j, "=", i*j) #print() 함수는 문자열과 정수를 혼합하여 출력합니다. ,를통하여
+    print()
