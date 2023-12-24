@@ -1,7 +1,6 @@
 #리스트 []
 #튜플 () 과 문자열
-#사전 {key:value} 과
-#집합 {A,B}
+#사전 {key:value} 과 집합 {A,B}
 
 #리스트나 튜플은 순서가 있기 때문에 인덱싱을 통해 자료형을 얻을 수 있다.
 #사전,집합자료형은 순서가 없기 때문에 인덱싱으로 값을 얻을 수  x
@@ -28,7 +27,7 @@ if '사과' in data:
 
 key_list = data.keys()
 values_list = data.values()
-print(key_list) #dict_keys(['사과', '바나나', '코코넛'])
+print(list(key_list)) #dict_keys(['사과', '바나나', '코코넛']) -> ['사과', '바나나', '코코넛']
 print(values_list)#dict_values(['apple', 'banana', 'coconut'])
 
 #각 키에 따른 값을 하나씩 출력
@@ -44,7 +43,7 @@ for key in key_list:
 #데이터의 조회 및 수정에 0(1)
     
 #집합자료형 초기화1
-data = set([1,1,2,3,4,4,5]) #중복 원소는 제거됨
+data = set([1,1,2,3,4,4,5]) #중복 원소는 제거됨★★★★★★★★★★★★★★★★★★★★★★★★★★
 print(data) #{1, 2, 3, 4, 5}
 
 #집합자료형 초기화2

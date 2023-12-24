@@ -2,8 +2,16 @@
 #map함수는 리스트의 모든 원소에 각각 특정한 함수를 적용할 때 사용
 #map(함수, 리스트)
 
+print('map test start')
+def square(x):
+    return x*x
+a,b,c = map(square,[1,2,3])
+print(a,b,c)
+print('map test end')
+
 #공백을 기준으로 구분된 데이터를 입력 받을 때는 다음과 같이
-list(map(int, input().split())) #input().split() -> 공백을 기준으로 입력받고 그걸 int(정수형으로 바꿔준 다음에) 리스트로 만든다.
+#input().split()은 사용자로부터 입력을 받아 공백을 기준으로 문자열을 분리한 후, 그 결과를 리스트로 반환
+list(map(int, input().split()))
 
 #공백을 기준으로 구분된 데이터의 개수가 많지 않다면
 a,b,c = map(int, input().split())
@@ -41,6 +49,7 @@ print(8, end= " ")
 
 answer = 7
 print("정답은 " + str(answer) + "입니다.")
+print("정답은 ",answer,"입니다2.")
 
 #파이선 3.6부터 'f'스트링
 answer = 7
