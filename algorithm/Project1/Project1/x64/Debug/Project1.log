@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\user\Desktop\git\algorithm\Project1\Project1\main.cpp(5,6): warning C4101: 'a' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\git\algorithm\Project1\Project1\main.cpp(6,6): warning C4101: 'b' :참조되지 않은 지역 변수입니다.
+C:\Users\user\Desktop\git\algorithm\Project1\Project1\main.cpp(7,6): warning C4101: 'c' :참조되지 않은 지역 변수입니다.
+  Project1.vcxproj -> C:\Users\user\Desktop\git\algorithm\Project1\x64\Debug\Project1.exe
